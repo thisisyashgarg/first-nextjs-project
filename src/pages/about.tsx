@@ -1,14 +1,22 @@
+import Head from "next/head";
+
 const About = () => {
   return (
-    <div>
-      <h1>About </h1>
-      <p>
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed,
-        consequuntur ad vel, quibusdam repudiandae esse dolores earum, sint
-        harum excepturi odio repellat optio. Magni harum quod corrupti ex nemo
-        enim!
-      </p>
-    </div>
+    <>
+      <Head>
+        <title>Ninja List | About</title>
+      </Head>
+      <div className="p-8 m-8 space-y-6 items-center flex flex-col text-center">
+        <h1>About </h1>
+        <p className="w-[50%] ">
+          List Ninja is an easy to use list assistant. There is no need for
+          creating an account, you just start right away creating lists. Whether
+          you're planning a trip to the grocery store, a weekend road trip, or
+          learning a new language List Ninja will help you create a list of
+          things you want to get or accomplish
+        </p>
+      </div>
+    </>
   );
 };
 
