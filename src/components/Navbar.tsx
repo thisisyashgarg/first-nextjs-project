@@ -6,9 +6,11 @@ const Navbar = () => {
   return (
     <nav className="flex p-4 px-10 justify-between items-center">
       <div>
-        <Image src="/logo.png" width={128} height={77} alt="logo" />
+        <Link href={"/"}>
+          <Image src="/logo.png" width={128} height={77} alt="logo" />
+        </Link>
       </div>
-      <div className="flex space-x-6">
+      <div className="sm:flex space-x-6 hidden">
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
         <Link href="/ninjas">Ninja Listing</Link>

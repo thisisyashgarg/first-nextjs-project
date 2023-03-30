@@ -8,7 +8,7 @@ const About = () => {
       </Head>
       <div className="p-8 m-8 space-y-6 items-center flex flex-col text-center">
         <h1>About </h1>
-        <p className="w-[50%] ">
+        <p className="w-[80%] ">
           List Ninja is an easy to use list assistant. There is no need for
           creating an account, you just start right away creating lists. Whether
           you're planning a trip to the grocery store, a weekend road trip, or

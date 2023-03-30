@@ -47,7 +47,7 @@ const Ninjas = ({ ninjas }: { ninjas: UserData[] }) => {
           return (
             <Link
               href={`/ninjas/${ninja.id}`}
-              className="bg-gray-200 p-3 m-3 "
+              className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
               key={ninja.id}
             >
               {ninja.name}
