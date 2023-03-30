@@ -15,7 +15,7 @@ export default function Home() {
         <p className="w-[80%] ">
           List Ninja is an easy to use list assistant. There is no need for
           creating an account, you just start right away creating lists. Whether
-          you're planning a trip to the grocery store, a weekend road trip, or
+          you are planning a trip to the grocery store, a weekend road trip, or
           learning a new language List Ninja will help you create a list of
           things you want to get or accomplish
         </p>
