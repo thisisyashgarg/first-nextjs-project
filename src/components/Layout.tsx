@@ -2,7 +2,11 @@ import React, { ReactNode } from "react";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
-const Layout = ({ children }) => {
+type LayoutProps = {
+  children: ReactNode;
+};
+
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div>
       <Navbar />
