@@ -1,3 +1,4 @@
+import Head from "next/head";
 import { UserData } from ".";
 
 type Context = {
@@ -34,11 +35,16 @@ export async function getStaticProps(context: Context) {
 
 const Details = ({ ninja }: { ninja: UserData }) => {
   return (
-    <div className="p-8 m-8 space-y-6 items-center flex flex-col text-center">
-      <h1 className="ext-3xl font-bold">{ninja.name}</h1>
-      <p>Email - {ninja.email}</p>
-      <p>City - {ninja.address.city}</p>
-    </div>
+    <>
+      <Head>
+        <title>Ninja List | {ninja.name}</title>
+      </Head>
+      <div className="p-8 m-8 space-y-6 items-center flex flex-col text-center">
+        <h1 className="ext-3xl font-bold">{ninja.name}</h1>
+        <p>Email - {ninja.email}</p>
+        <p>City - {ninja.address.city}</p>
+      </div>
+    </>
   );
 };
 
