@@ -2,7 +2,9 @@
 
 import type { NextApiRequest, NextApiResponse } from "next";
 import jwt from "jsonwebtoken";
-const KEY = "hjksdgbfvcjhsdbfvjhbdfj";
+import { config } from "dotenv";
+config();
+
 export default function (req: NextApiRequest, res: NextApiResponse) {
   if (!req.body) {
     res.statusCode = 404;
@@ -10,15 +12,14 @@ export default function (req: NextApiRequest, res: NextApiResponse) {
     return;
   }
   const { username, password } = req.body;
-  console.log(req.body);
-  // console.log(req.query);
+
   res.json({
     token: jwt.sign(
       {
         username,
         admin: username === "admin" && password === "admin",
       },
-      KEY
+      process.env.KEY as string
     ),
   });
 }

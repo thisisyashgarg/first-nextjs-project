@@ -5,9 +5,10 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("You are not logged in");
+  const [secret, setSecret] = useState("");
 
   async function submitForm() {
-    const dataSent = await fetch("http:localhost:3000/api/login", {
+    const dataSent = await fetch("http://localhost:3000/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -26,6 +27,19 @@ const Login = () => {
           json.admin ? "admin" : "not an admin"
         }`
       );
+
+      const dataSent = await fetch("http://localhost:3000/api/secret", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          token,
+        }),
+      }).then((t) => t.json());
+
+      if (dataSent.secretAdminCode) setSecret(dataSent.secretAdminCode);
+      else setSecret("Nothing available");
     } else {
       setMessage("Something went wrong");
     }
@@ -34,7 +48,8 @@ const Login = () => {
   return (
     <div>
       <h1>{message}</h1>
-      <form method="POST">
+      <h2>Secret:{secret}</h2>
+      <form>
         <input
           type="text"
           name="username"
@@ -47,9 +62,7 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit" onSubmit={submitForm}>
-          Submit
-        </button>
+        <input type="button" value="Submit" onClick={submitForm} />
       </form>
     </div>
   );
