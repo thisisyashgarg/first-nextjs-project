@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
   const paths = ninjas.map((ninja) => {
     return {
-      params: { id: ninja.id.toString() },
+      params: { id: ninja.id.toString() as string },
     };
   });
   return {
