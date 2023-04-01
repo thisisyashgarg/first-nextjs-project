@@ -16,9 +16,16 @@ export default function Home() {
           learning a new language List Ninja will help you create a list of
           things you want to get or accomplish
         </p>
-        <button className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300">
-          <Link href="/ninjas">See Ninja Listings</Link>
-        </button>
+
+        <div className="flex space-x-4">
+          <button className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300">
+            <Link href="/ninjas">See Ninja Listings</Link>
+          </button>
+
+          <button className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300">
+            <Link href="/login">Login</Link>
+          </button>
+        </div>
       </div>
     </>
   );
