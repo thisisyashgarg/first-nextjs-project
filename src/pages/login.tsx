@@ -46,23 +46,34 @@ const Login = () => {
   }
 
   return (
-    <div>
+    <div className="p-8 m-8 space-y-6 items-center flex flex-col text-center">
       <h1>{message}</h1>
-      <h2>Secret:{secret}</h2>
-      <form>
+      <h2>Secret: {secret}</h2>
+      <form className="space-y-4">
+        <label htmlFor="username">Username:</label>
         <input
+          className="p-2 ml-4 border"
           type="text"
           name="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
+        <br />
+        <label htmlFor="password">Password:</label>
         <input
+          className="p-2 ml-4 border"
           type="password"
           name="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <input type="button" value="Submit" onClick={submitForm} />
+        <br />
+        <input
+          type="button"
+          value="Submit"
+          onClick={submitForm}
+          className=" mt-5 rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
+        />
       </form>
     </div>
   );
