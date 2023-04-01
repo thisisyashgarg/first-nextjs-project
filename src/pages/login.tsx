@@ -9,16 +9,20 @@ const Login = () => {
   const [secret, setSecret] = useState("");
 
   async function submitForm() {
-    const dataSent = await fetch("http://localhost:3000/api/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        password,
-      }),
-    }).then((t) => t.json());
+    const dataSent = await fetch(
+      "http://localhost:3000/api/login" ||
+        "https://ninjalisting.netlify.app/api/login",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          username,
+          password,
+        }),
+      }
+    ).then((t) => t.json());
 
     const token: string = dataSent.token;
     if (token) {
@@ -29,15 +33,19 @@ const Login = () => {
         }`
       );
 
-      const dataSent = await fetch("http://localhost:3000/api/secret", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          token,
-        }),
-      }).then((t) => t.json());
+      const dataSent = await fetch(
+        "http://localhost:3000/api/secret" ||
+          "https://ninjalisting.netlify.app/api/secret",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            token,
+          }),
+        }
+      ).then((t) => t.json());
 
       if (dataSent.secretAdminCode) setSecret(dataSent.secretAdminCode);
       else setSecret("Nothing available");
