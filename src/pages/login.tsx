@@ -9,9 +9,11 @@ const Login = () => {
   const [secret, setSecret] = useState("");
 
   async function submitForm() {
+    console.log("submit form called");
+
     const dataSent = await fetch(
-      // "http://localhost:3000/api/login" ||
-      "https://ninjalisting.netlify.app/api/login",
+      "http://localhost:3000/api/login" ||
+        "https://ninjalisting.netlify.app/api/login",
       {
         method: "POST",
         headers: {
@@ -34,8 +36,8 @@ const Login = () => {
       );
 
       const dataSent = await fetch(
-        // "http://localhost:3000/api/secret" ||
-        "https://ninjalisting.netlify.app/api/secret",
+        "http://localhost:3000/api/secret" ||
+          "https://ninjalisting.netlify.app/api/secret",
         {
           method: "POST",
           headers: {

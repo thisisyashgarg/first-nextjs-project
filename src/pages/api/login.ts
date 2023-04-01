@@ -4,6 +4,8 @@ import { config } from "dotenv";
 config();
 
 export default function (req: NextApiRequest, res: NextApiResponse) {
+  console.log("login api called");
+
   if (!req.body) {
     res.statusCode = 404;
     res.send("Error");

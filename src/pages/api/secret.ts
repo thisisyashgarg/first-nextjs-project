@@ -4,6 +4,8 @@ import { config } from "dotenv";
 config();
 
 export default function (req: NextApiRequest, res: NextApiResponse) {
+  console.log("secrets api called");
+
   const { token } = req.body;
   const { admin } = jwt.verify(token, process.env.KEY as string) as {
     [key: string]: boolean;
