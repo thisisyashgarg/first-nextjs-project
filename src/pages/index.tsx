@@ -18,13 +18,19 @@ export default function Home() {
         </p>
 
         <div className="flex space-x-4">
-          <button className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300">
-            <Link href="/ninjas">See Ninja Listings</Link>
-          </button>
+          <Link
+            href="/ninjas"
+            className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
+          >
+            See Ninja Listings
+          </Link>
 
-          <button className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300">
-            <Link href="/login">Login</Link>
-          </button>
+          <Link
+            href="/login"
+            className="rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
+          >
+            Login
+          </Link>
         </div>
       </div>
     </>

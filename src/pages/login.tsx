@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 import jwt from "jsonwebtoken";
 import Head from "next/head";
 
@@ -75,13 +75,14 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <input
-            type="button"
-            value="Submit"
-            onClick={submitForm}
-            className=" mt-5 rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
-          />
         </form>
+        <button
+          onClick={submitForm}
+          className=" mt-5 rounded-md border border-blue-600 px-3.5 py-1.5 text-base font-semibold leading-7 text-blue-600 hover:bg-blue-300"
+        >
+          Submit
+        </button>
+        <input />
       </div>
     </>
   );
